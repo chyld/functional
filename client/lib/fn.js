@@ -40,13 +40,19 @@
     };
   }
 
+  /*
+   * __.range(23,-58,-7)
+   * // => [23, 16, 9, 2, -5, -12, -19, -26, -33, -40, -47, -54]
+   */
   function range(start, stop, inc){
-    var iterator = incBy(start, inc);
-    var steps = Math.floor((stop - start) / inc);
+    var generator = incBy(start, inc);
+    var steps = Math.ceil((stop - start) / inc);
+
     var values = [];
     for(var i = 0; i < steps; i++){
-      values.push(iterator());
+      values.push(generator());
     }
+
     return values;
   }
 

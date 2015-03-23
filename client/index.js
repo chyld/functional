@@ -19,4 +19,8 @@ $(document).ready(function(){
 
   var squareAll = __.mapWith(function(n){return Math.pow(n, 2);});
   console.log('squareAll:', squareAll([2,4,6]));
+
+  // -------------------------------------------- //
+
+  console.log('range:', __.range(20, -127, -15));
 });
